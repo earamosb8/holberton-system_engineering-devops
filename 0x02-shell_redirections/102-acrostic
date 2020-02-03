@@ -1,0 +1,2 @@
+#!/bin/bash
+cat Acrostic | cut -c 1
