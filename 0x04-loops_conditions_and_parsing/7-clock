@@ -9,12 +9,15 @@ do
 	case $count in
 	60) let hour+=1
 	    echo "Hour: ${hour}"
-            if [ $hour -lt 12 ]
-            then
-	      count=0
-            else
-              break
-            fi
+            count=0
+            
+            
+	;;
+	59) echo $count
+		if [ $hour -eq 12 ]
+	    then
+	       break
+	fi
 	;;
 	*) echo $count
 	;;
