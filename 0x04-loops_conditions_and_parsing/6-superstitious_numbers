@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times, in the 9 time add "hi"
+count=1
+while [ $count -le 20 ]
+do
+	echo $count
+	case $count in
+	4) echo "bad luck from China"
+	;;
+	9) echo "bad luck from Japan"
+	;;
+	17) echo "bad luck from Italy"
+	;;
+	esac
+	let count+=1
+done 
