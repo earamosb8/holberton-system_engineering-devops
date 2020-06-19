@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times using while
+count=59
+hour=-1
+
+while [ $count -le 60 ]
+do
+        let count+=1
+	case $count in
+	60) let hour+=1
+	    echo "Hour: ${hour}"
+            if [ $hour -lt 12 ]
+            then
+	      count=0
+            else
+              break
+            fi
+	;;
+	*) echo $count
+	;;
+	esac
+done
