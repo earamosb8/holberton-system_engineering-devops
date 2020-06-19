@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script display "Holberton School" 10 times,add "bad luck" for the 4th loop iteration and "good luck" for the 8th loop iteration
+for ((i = 1; i <= 10; i++))
+do
+	if [ $i -eq 4 ]
+	then
+		echo bad luck
+	elif [ $i -eq 8 ]
+	then
+		echo good luck
+	else
+		echo Holberton School
+	fi
+done 
