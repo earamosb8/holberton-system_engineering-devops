@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+dir="/etc/passwd"
+while read line
+do
+    echo "$line" | cut -d ":" -f 1,3,6   
+done < $dir
