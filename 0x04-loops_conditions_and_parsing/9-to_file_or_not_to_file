@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script display if a file "Holberton School" exist and is empty or not
+MYFILE="holbertonschool"
+if [ -e $MYFILE ]
+  then
+  echo "$MYFILE file exists" 
+  	if [ -s $MYFILE ]
+  	then
+    		echo "$MYFILE file is not empty"
+  	else
+    		echo "$MYFILE file is empty"
+  	fi 
+        if [ -f $MYFILE ]
+        then
+        	echo "$MYFILE is a regular file"
+	fi
+else
+   echo "$MYFILE file does not exist"
+fi
