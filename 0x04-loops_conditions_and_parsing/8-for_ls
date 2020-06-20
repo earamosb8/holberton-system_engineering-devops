@@ -2,5 +2,5 @@
 # This script is displaying all file in this directory
 for f in *; 
 do
-  echo "$f"
+  echo "$f" | cut -d '-' -f 2
 done
