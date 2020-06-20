@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script is displaying all file in this directory
+for f in *; 
+do
+  echo "$f"
+done
