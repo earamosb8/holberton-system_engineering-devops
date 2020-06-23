@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Script to control manage_my_process
+myfile='/var/run/my_process.pid'
+case $1 in
+ "start")
+    touch "$myfile"
+    ./manage_my_process &
+    echo "$!" > $myfile
+    echo "manage_my_process started"
+  ;;
+  "stop")
+    pkill -f "./manage_my_process"
+    rm "$myfile" 
+    echo "manage_my_process stopped"
+  ;;
+  "restart")
+    pkill -f "./manage_my_process"
+    rm "$myfile"
+    touch "$myfile"
+    ./manage_my_process &
+    echo "$!" > $myfile
+    echo "manage_my_process restarted"
+   ;;
+   *)
+    echo "Usage: manage_my_process {start|stop|restart}"
+   ;;
+esac
