@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This script Creates the file /var/run/
+touch /var/run/holbertonscript.pid
+bash -c "echo $$ > /var/run/holbertonscript.pid"
+function term()
+{
+    echo I hate the kill command
+    rm /var/run/holbertonscript.pid
+}
+
+function quit()
+{
+    echo Y U no love me?!
+    rm /var/run/holbertonscript.pid
+}
+
+trap term SIGTERM
+trap "echo Y U no love me?!" SIGINT
+trap quit SIGQUIT
+
+while :
+do
+    echo "To infinity and beyond"
+    sleep 2s
+done
