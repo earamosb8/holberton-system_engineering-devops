@@ -1,0 +1,5 @@
+Host *
+HostName 35.185.94.167
+IdentifyFile ~/.ssh/holberton
+PasswordAuthentication No
+PubkeyAuthentication yes
