@@ -7,12 +7,12 @@ if [ $# -eq 1 ]
 			URL="$DOM.$1"
 			A=$(dig $URL | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $4}')
 			IP=$(dig $URL | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')
-			echo "The subdomain $DOM $A record and points to $IP"
+			echo "The subdomain $DOM is a $A record and points to $IP"
         	done
 elif [ $# -eq 2 ]
 	then
         		URL="$2.$1"
                         A=$(dig $URL | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $4}')
                         IP=$(dig $URL | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')
-                        echo "The subdomain $2 $A record and points to $IP"
+                        echo "The subdomain $2 is a $A record and points to $IP"
 fi
