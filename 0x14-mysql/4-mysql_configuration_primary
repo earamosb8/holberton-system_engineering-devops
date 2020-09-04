@@ -23,7 +23,9 @@
 [mysqld_safe]
 socket          = /var/run/mysqld/mysqld.sock
 nice            = 0
-                                                                                                                                                             [mysqld]                                                                                                                                                     #
+
+[mysqld]
+#
 # * Basic Settings
 #
 user            = mysql
@@ -74,10 +76,10 @@ log_error = /var/log/mysql/error.log
 #log_slow_queries       = /var/log/mysql/mysql-slow.log
 #long_query_time = 2
 #log-queries-not-using-indexes
-#
 # The following can be used as easy to replay backup logs or for replication.
 # note: if you are setting up a replication slave, see README.Debian about
-#       other settings you may need to change.                                                                                                               server-id               = 1
+#       other settings you may need to change.
+server-id               = 1
 log_bin                 = /var/log/mysql/mysql-bin.log
 expire_logs_days        = 10
 max_binlog_size   = 100M
