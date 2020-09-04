@@ -40,7 +40,7 @@ skip-external-locking
 #
 # Instead of skip-networking the default is now to listen only on
 # localhost which is more compatible and is not less secure.
-bind-address            = 127.0.0.1
+# bind-address          = 127.0.0.1
 #
 # * Fine Tuning
 #
@@ -52,7 +52,8 @@ thread_cache_size       = 8
 # the first time they are touched
 myisam-recover-options  = BACKUP
 #max_connections        = 100
-#table_cache            = 64                                                                                                                        #thread_concurrency     = 10
+#table_cache            = 64
+#thread_concurrency     = 10
 #
 # * Query Cache Configuration
 #
