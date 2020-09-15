@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     employee = user_dic[0].get('name')
 
-    with open("{}.csv".format(emp_id), 'w', newline='') as csvfile:
+    with open(emp_id + '.csv', 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in tasks_dic:
             status = task['completed']
