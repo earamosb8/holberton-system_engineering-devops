@@ -2,12 +2,12 @@
 """requests todo and users from
    https://jsonplaceholder.typicode.com"""
 import csv
-import request
-import sys
+import requests
+from sys import argv
 
 
 if __name__ == "__main__":
-    emp_id = sys.argv[1]
+    emp_id = argv[1]
     urltodo = 'https://jsonplaceholder.typicode.com/todos/'
     urluser = 'https://jsonplaceholder.typicode.com/users/'
     tasks = requests.get(urltodo, params={'userId': emp_id})
