@@ -16,7 +16,7 @@ if __name__ == "__main__":
     tasks_dic = tasks.json()
     user_dic = user.json()
 
-    employee = user_dic[0].get('name')
+    employee = user_dic[0].get('username')
 
     with open(emp_id + '.csv', 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
