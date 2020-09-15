@@ -5,20 +5,23 @@ import json
 import requests
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     emp_id = 1
+    u_tasks = {}
     urltodo = 'https://jsonplaceholder.typicode.com/todos/'
     urluser = 'https://jsonplaceholder.typicode.com/users/'
-    tasks = requests.get(urltodo, params={'userId': emp_id})
-    user = requests.get(urluser, params={'id': emp_id})
+    users = requests.get(urluser).json()
 
-    tasks = tasks.json()
-    user = user.json()
-    tasks_usdic = {}
-    task_list = []
+    for emp_id in range(1, len(users) + 1):
+        tasks = requests.get(urltodo, params={'userId': emp_id})
+        user = requests.get(urluser, params={'id': emp_id})
 
-    employee = user[0].get('username')
-    for task in tasks:
+        todo_dict = tasks.json()
+        user_dict = user.json()
+        task_list = []
+        employee = user_dict[0].get('username')
+
+        for task in todo_dict:
             status = task.get('completed')
             title = task.get('title')
             task_dict = {}
@@ -26,7 +29,7 @@ if __name__ == "__main__":
             task_dict['completed'] = status
             task_dict['username'] = employee
             task_list.append(task_dict)
-            tasks_usdic[emp_id] = task_list
+        u_tasks[emp_id] = task_list
 
-with open("todo_all_employees.json", "w+") as jsonfile:
-        json.dump(tasks_usdic, jsonfile)
+    with open("todo_all_employees.json", "w+") as jsonfile:
+        json.dump(u_tasks, jsonfile)
