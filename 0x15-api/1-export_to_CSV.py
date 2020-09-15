@@ -16,9 +16,6 @@ if __name__ == "__main__":
     tasks_dic = tasks.json()
     user_dic = user.json()
 
-    complete_taks = []
-
-    total_tasks = len(tasks_dic)
     employee = user_dic[0].get('name')
 
     with open("{}.csv".format(emp_id), "w", newline="") as csvfile:
