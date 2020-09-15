@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """requests todo and users from
    https://jsonplaceholder.typicode.com"""
-import csv
 import json
 import requests
 
