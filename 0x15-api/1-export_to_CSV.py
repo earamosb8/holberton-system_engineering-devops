@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """requests todo and users from
    https://jsonplaceholder.typicode.com"""
-import requests
-import sys
 import csv
+import request
+import sys
 
 
 if __name__ == "__main__":
