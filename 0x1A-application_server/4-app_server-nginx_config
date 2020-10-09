@@ -26,6 +26,9 @@ server {
         rewrite /airbnb-dynamic/(.*) /$1 break;
         proxy_pass http://0.0.0.0:5001//airbnb-dynamic/number_odd_or_even/;
         }
+        location /api/ {
+                proxy_pass http://0.0.0.0:5002/api/;
+        }
 
 add_header X-Served-By '1493-web-01';
         error_page 404 /404.html;
